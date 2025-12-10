@@ -63,24 +63,33 @@ button:active {
 h1{
     
     font-family: 'Bungee', cursive;
-    font-size: 394px;
+    font-size: clamp(60px, 25vw, 394px);
     color: rgb(255, 255, 255);
     text-align: center;
-    padding: 50px;
-    top: 0;
+    padding: 0;
     position: absolute;
-    z-index: -500;
-    margin-top: -16%;
-    margin-left: 1%;
-    animation-name: slideInUp;
+    z-index: -1;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: slideInUpCentered;
     animation-duration: 1s;
+    animation-fill-mode: both;
+    white-space: nowrap;
+    margin: 0;
 }
 
 #home-description{
     font-family: 'Poppins', sans-serif;
-    font-size: 50px;
-    font-weight: bold; 
-
+    font-size: 40px;
+    font-weight: bold;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.3;
+    animation-name: slideInUp;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
 }
 
 .center{
@@ -89,6 +98,7 @@ h1{
     text-align: center; 
     animation-name: slideInUp;
     animation-duration: 3s;
+    position: relative;
 }
 
 body{
@@ -175,6 +185,16 @@ body{
   
     to {
       transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes slideInUpCentered {
+    from {
+      transform: translate(-50%, 100%);
+      visibility: visible;
+    }
+  
+    to {
+      transform: translate(-50%, -50%);
     }
   }
   @keyframes slideIndown {
@@ -744,16 +764,17 @@ a{
     margin-left: 1%;
   }
   #home-description{
-    font-size: 14px;
+    font-size: 18px;
+    max-width: 90%;
+    line-height: 1.5;
   }
   #emoji{
     width: 50px;
     height: 50px;
   }
   h1{
-    font-size: 100px;
-    margin-top: -12%;
-    margin-left: -12%;
+    top: 30%;
+    padding: 0;
   }
   #about-button{
     margin-top: -5%;
